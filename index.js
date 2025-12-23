@@ -35,7 +35,7 @@ app.post("/students", async (req, res) => {
   }
 });
 
-app.post("/students/:id", async (req, res) => {
+app.put("/students/:id", async (req, res) => {
   const studentId = req.params.id;
   const updatedStudentData = req.body;
 
