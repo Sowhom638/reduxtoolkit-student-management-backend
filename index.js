@@ -35,22 +35,6 @@ app.post("/students", async (req, res) => {
   }
 });
 
-app.get("/students/:id", async (req, res) => {
-  const studentId = req.params.id;
-
-  try {
-    const foundedStudent = await Student.findById(studentId);
-
-    if (!foundedStudent) {
-      return res.status(404).json({ message: "Student not found" });
-    }
-
-    res.status(200).json(foundedStudent);
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: "Server error" });
-  }
-});
 app.post("/students/:id", async (req, res) => {
   const studentId = req.params.id;
   const updatedStudentData = req.body;
